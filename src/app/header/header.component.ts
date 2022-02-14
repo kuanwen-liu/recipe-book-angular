@@ -6,14 +6,9 @@ import { Component, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent {
-  @Output() shoppingC = new EventEmitter<string>();
-  @Output() recipeC = new EventEmitter<string>();
+  @Output() featureSelected = new EventEmitter<string>();
 
-  onShoppingC() {
-    this.shoppingC.emit('shopping');
-  }
-
-  onRecipeC() {
-    this.recipeC.emit('recipe');
+  onSelect(feature: string) {
+    this.featureSelected.emit(feature);
   }
 }
